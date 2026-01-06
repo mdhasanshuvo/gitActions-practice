@@ -18,9 +18,5 @@ jobs:
         uses: actions/setup-node@v6
       - name: node version
         run: node -v
-      - name: read the txt file
-        run: cat hello.txt
-      - name: read new file
-        run: |
-          cd new-file
-          cat hello2.txt
+      - name: run hello script
+        run: bash hello.sh
