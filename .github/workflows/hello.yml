@@ -9,14 +9,22 @@ on:
       - main
 
 jobs:
-  read_the_file:
-    runs-on: ubuntu-latest
+  setup_nginx:
+    runs-on: self-hosted
     steps:
-      - name: git clone
-        uses: actions/checkout@v2
-      - name: node setup
-        uses: actions/setup-node@v6
-      - name: node version
-        run: node -v
-      - name: run hello script
-        run: bash hello.sh
+      - name: install nigix
+        run: sudo apt update && sudo apt install nginx -y
+        
+
+# jobs:
+#   read_the_file:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: git clone
+#         uses: actions/checkout@v2
+#       - name: node setup
+#         uses: actions/setup-node@v6
+#       - name: node version
+#         run: node -v
+#       - name: run hello script
+#         run: bash hello.sh
