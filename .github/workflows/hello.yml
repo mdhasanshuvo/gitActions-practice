@@ -1,0 +1,18 @@
+name: Practice CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  read_the_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git clone
+        uses: actions/checkout@v2
+      - name: read the txt file
+        run: cat hello.txt
