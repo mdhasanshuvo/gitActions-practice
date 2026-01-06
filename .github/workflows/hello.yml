@@ -20,3 +20,7 @@ jobs:
         run: node -v
       - name: read the txt file
         run: cat hello.txt
+      - name: read new file
+        run: |
+          cd new-file
+          cat hello2.txt
